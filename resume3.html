@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>grid在线简历</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_974371_cqiyab42oyq.css">
+  <style>
+    /*css reset*/
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    ul {
+      margin-left: 1em;
+    }
+    li {
+      margin-top: 10px;
+    }
+    
+    /*layout*/
+    body {
+      display: grid;
+      grid: auto auto / 1fr 300px 700px 1fr;
+    }
+    header {
+      background: lightgreen;
+      grid-column: 1 / span 4;
+      grid-row: 1;
+    }
+    main {
+      grid-column: 3;
+      grid-row: 2;
+    }
+    aside {
+
+      grid-column: 2;
+      grid-row: 2;
+    }
+    @media (max-width: 1000px) {
+      body {
+        grid: 100px 400px / 1fr 200px 400px 1fr;
+      }   
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        grid: auto auto auto / 1fr;
+        padding: 0 10px 30px 10px;
+      }
+      header {
+        grid-column: 1;
+        grid-row: 1;
+      }
+      main {
+        grid-column: 1;
+        grid-row: 2;
+      }
+      aside {
+        grid-column: 1;
+        grid-row: 3;
+      }
+    } 
+    
+    /*common*/
+    body {
+      font: 14px/1.5 Arial;
+      color: #333;
+      padding-bottom: 30px;
+    }
+    
+    /*page*/
+    header {
+      text-align: center;
+      padding: 30px;
+      background: #444;
+      color: #fff;
+    }
+    header img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+    header figcaption {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    header figure p {
+      margin-top: 10px;
+      color: #ccc;
+    }
+    
+    section {
+      display: grid;
+      grid: auto auto / 50px 120px 1fr;
+      align-items: center;
+      margin-top: 20px;
+      padding: 10px;
+    }
+    section > .iconfont {
+      grid-row: 1;
+      grid-column: 1;
+      display: block;
+      width: 30px;
+      height: 30px;
+      background: #66a9a3;
+      border-radius: 50%;
+      font-size: 20px;
+      text-align: center;
+      color: #fff;
+    }
+    section > h2 {
+      grid-row: 1;
+      grid-column: 2;
+      font-size: 18px;
+    }
+    section > hr {
+      grid-row: 1;
+      grid-column: 3;
+      border: none;
+      height: 3px;
+      background: #66a9a3;
+    }
+    section >.detail {
+      grid-row: 2;
+      grid-column: 2/span 2
+    }
+    section .icon-list {
+      display: flex;
+      align-items: center;
+    }
+    section .icon-list .iconfont {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+    section .skill-bar dt {
+      margin-top: 16px;
+    }
+    section .skill-bar dd {
+      height: 3px;
+      background: #eaeaea;
+    }
+    section .skill-bar dd div {
+      height: 100%;
+      background: #66a9a3;
+      margin-top: 10px;
+    }
+    section .timeline-panel {
+      display: grid;
+      grid: auto auto / 120px 1fr auto;
+      align-items: center;
+      margin-top: 16px;
+    }
+    section .timeline-panel .date {
+      grid-row: 1;
+      grid-column: 1;
+    }
+    section .timeline-panel > h3 {
+      grid-row: 1;
+      grid-column: 2;
+    }
+    section .timeline-panel .intro {
+      grid-row: 1;
+      grid-column: 3;
+      color: #666;
+    }
+    section .timeline-panel .detail {
+      grid-row: 2;
+      grid-column: 2/span 2;
+      margin-top: 10px;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+    <figure>
+      <img src="http://cloud.hunger-valley.com/18-12-19/61170968.jpg" alt="头像">
+      <figcaption>若愚</figcaption>
+      <p>应聘前端工程师</p>
+    </figure>
+  </header>
+  <main>    
+    <section>
+      <span class="iconfont icon-education"></span>
+      <h2>教育经历</h2>
+      <hr>
+      <div class="detail">
+        <div class="timeline-panel">
+          <div class="date">09/2013~07/2017</div>
+          <h3>电子科技大学</h3>
+          <p class="intro">计算机专业</p>
+          <div class="detail">
+            多次获得校一等奖学金，成绩排名专业前10%.
+          </div>
+        </div>
+        <div class="timeline-panel">
+          <div class="date">09/2013~07/2017</div>
+          <h3>浙江大学</h3>
+          <p class="intro">计算机专业</p>
+          <div class="detail">
+            多次获得校一等奖学金，成绩排名专业前10%.
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    <section>
+      <span class="iconfont icon-experience"></span>
+      <h2>工作经历</h2>
+      <hr>
+      <div class="detail">
+        <div class="timeline-panel">
+          <div class="date">09/2013~07/2017</div>
+          <h3>饥人谷</h3>
+          <p class="intro">前端工程师</p>
+          <div class="detail">
+            <ul>
+              <li>项目介绍： 该项目的目的是搭建线上学习平台，把线下课堂的完整学习流程搬到线上，平台包括课程展示、购买、直播、录播、作业、权限管理、停课复课、试听等几十个大功能。该项目采用前后分离的技术方案， 我主要负责前端部分的开发。项目前端部分使用Vue技术栈，移动端平台使用自己实现的vue ui组件库。</li>
+              <li>技术栈：vue、vue-router、vuex、element-ui、typescript、webpack、es6、移动端</li>
+              <li>项目成果: 项目支撑饥人谷日常教学活动、运营活动的正常开展，支持数千学生的日常线上学习，几十万用户的日常访问。</li>
+            </ul>
+          </div>
+        </div> 
+      </div>
+    </section>  
+    <section>
+      <span class="iconfont icon-project"></span>
+      <h2>项目经历</h2>
+      <hr>
+      <div class="detail">
+        <div class="timeline-panel">
+          <div class="date">09/2013~07/2017</div>
+          <h3>写代码啦课程平台Web端项目</h3>
+          <div class="detail">
+            <ul>
+              <li>项目介绍： 该项目的目的是搭建线上学习平台，把线下课堂的完整学习流程搬到线上，平台包括课程展示、购买、直播、录播、作业、权限管理、停课复课、试听等几十个大功能。该项目采用前后分离的技术方案， 我主要负责前端部分的开发。项目前端部分使用Vue技术栈，移动端平台使用自己实现的vue ui组件库。</li>
+              <li>技术栈：vue、vue-router、vuex、element-ui、typescript、webpack、es6、移动端</li>
+              <li>项目成果: 项目支撑饥人谷日常教学活动、运营活动的正常开展，支持数千学生的日常线上学习，几十万用户的日常访问。</li>
+            </ul>
+          </div>
+        </div> 
+<div class="timeline-panel">
+          <div class="date">09/2013~07/2017</div>
+          <h3>写代码啦课程平台Web端项目</h3>
+          <div class="detail">
+            <ul>
+              <li>项目介绍： 该项目的目的是搭建线上学习平台，把线下课堂的完整学习流程搬到线上，平台包括课程展示、购买、直播、录播、作业、权限管理、停课复课、试听等几十个大功能。该项目采用前后分离的技术方案， 我主要负责前端部分的开发。项目前端部分使用Vue技术栈，移动端平台使用自己实现的vue ui组件库。</li>
+              <li>技术栈：vue、vue-router、vuex、element-ui、typescript、webpack、es6、移动端</li>
+              <li>项目成果: 项目支撑饥人谷日常教学活动、运营活动的正常开展，支持数千学生的日常线上学习，几十万用户的日常访问。</li>
+            </ul>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>    
+    
+  </main>
+  <aside>
+    <section>
+      <span class="iconfont icon-personal"></span>
+      <h2>基本信息</h2>
+      <hr>
+      <div class="detail">
+        <div class="icon-list"><span class="iconfont icon-phone"></span>13012341234</div>
+        <div class="icon-list"><span class="iconfont icon-wechat"></span>xiedaimala01</div>
+        <div class="icon-list"><span class="iconfont icon-email"></span>no-reply@jirengu.com</div>
+        <div class="icon-list"><span class="iconfont icon-education"></span>本科</div>
+        
+
+
+
+      </div>
+    </section>
+    <section>
+      <span class="iconfont icon-introduction"></span>
+      <h2>掌握技能</h2>
+      <hr>
+      <div class="detail">
+        <ul>
+          <li>掌握HTML5/CSS3，熟悉传统布局、Flex布局、Grid布局、移动端适配等</li>
+          <li>熟悉Vue技术栈如Vue-Router、Vuex、Vue-CLI及相关流行库的使用，理解其重要概念</li>
+          <li>熟悉React / Redux技术栈等使用，能够使用React进行基本开发</li>
+          <li>熟悉前后端交互技术JSONP、AJAX，了解fetch></li>      <li>熟悉Node.js开发，能搭建基础后台开发</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <span class="iconfont icon-skills"></span>
+      <h2>技能图谱</h2>
+      <hr>
+      <div class="detail">
+        <dl class="skill-bar">
+          <dt>JavaScript</dt>
+          <dd><div style="width:50%"></div></dd>
+          <dt>CSS3</dt>
+          <dd><div style="width:70%"></div></dd>
+          <dt>Node</dt>
+          <dd><div style="width:80%"></div></dd>
+          <dt>Vue</dt>
+          <dd><div style="width:60%"></div></dd>
+          <dt>React</dt>
+          <dd><div style="width:88%"></div></dd>
+        </dl>
+      </div>
+    </section>
+  </aside>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
